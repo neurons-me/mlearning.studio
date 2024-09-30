@@ -6,9 +6,22 @@
   "type": "module",
   "repoType": "App",
   "scripts": {
-    "test": "test",
-    "start": "node server.js"
-  },
+      "dev": "concurrently \"npm:dev:*\"",
+      "dev:api": "node index.js",
+      "dev:gui": "cd gui && vite",
+      "build": "cd gui && vite build",
+      "start": "node index.js",
+      "start:prod": "npm run build && npm run start"
+    },
+    "dependencies": {
+      "express": "^4.21.0",
+      "concurrently": "^7.0.0"
+    },
+    "devDependencies": {
+      "vite": "^4.0.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/suiGn/mlearning.studio.git"
@@ -22,8 +35,5 @@
   "bugs": {
     "url": "https://github.com/suiGn/mlearning.studio/issues"
   },
-  "homepage": "https://github.com/suiGn/mlearning.studio#readme",
-  "dependencies": {
-    "three": "^0.165.0"
-  }
+  "homepage": "https://github.com/suiGn/mlearning.studio#readme"
 }
