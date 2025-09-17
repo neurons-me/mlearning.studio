@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+mlearning_studio.egg-info/PKG-INFO
+mlearning_studio.egg-info/SOURCES.txt
+mlearning_studio.egg-info/dependency_links.txt
+mlearning_studio.egg-info/top_level.txt
+tests/test_core.py

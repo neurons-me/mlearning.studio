@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: mlearning-studio
+Version: 0.1.0
+Summary: Paquete under development de mlearning.studio
+Home-page: https://github.com/neurons-me/mlearning.studio
+Author: José Abella Eggleton
+Author-email: José Abella Eggleton <jabellae@gmail.com>
+License: MIT
+Keywords: machine learning,neurons,ai
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# mlearning.studio
+Under development

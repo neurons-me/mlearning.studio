@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlearning-studio"               # nombre del paquete en PyPI (guiones en lugar de puntos)
+version = "0.1.0"
+description = "Paquete under development de mlearning.studio"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name="José Abella Eggleton", email="jabellae@gmail.com" }
+]
+
+keywords = ["machine learning", "neurons", "ai"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = []

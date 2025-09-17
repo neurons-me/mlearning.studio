@@ -1,0 +1,16 @@
+[package]
+name = "mlearning-studio"
+version = "0.1.0"
+edition = "2021"
+description = "Crate under development de mlearning.studio"
+license = "MIT"
+repository = "https://github.com/neurons-me/mlearning.studio"
+readme = "README.md"
+keywords = ["machine-learning", "neurons", "ai"]
+categories = ["science", "algorithms", "data-structures"]
+
+[lib]
+name = "mlearning_studio"
+path = "src/lib.rs"
+
+[dependencies]
