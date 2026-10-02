@@ -1,0 +1,20 @@
+{
+  "name": "mlearning.studio",
+  "version": "0.1.0",
+  "description": "Package under development of mlearning.studio.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "status": "under development",
+  "license": "MIT",
+  "repository": "https://github.com/neurons-me/mlearning.studio",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test:ts": "tsc --noEmit"
+  },
+  "keywords": ["machine-learning", "neurons", "ai"],
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
