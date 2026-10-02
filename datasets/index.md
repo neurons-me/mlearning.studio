@@ -2,6 +2,7 @@
 layout: readme
 title: Datasets
 description: Curated datasets for mlearning.studio — links and demos, not bulk dumps.
+image: https://suign.github.io/assets/imgs/DATASETS.jpg
 permalink: /datasets/
 ---
 
