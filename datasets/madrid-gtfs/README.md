@@ -24,8 +24,6 @@
   <a href="https://neurons-me.github.io/.me/docs/Smart-Cities.html">Syntax</a>
   <a href="https://neurons-me.github.io/.me/docs/Tests/gtfs-madrid-universe.html">GTFS</a>
   <a href="https://neurons-me.github.io/.me/docs/Tests/madrid-knowledge.html">Fares</a>
-  <a href="https://neurons-me.github.io/mlearning.studio/datasets/">Datasets</a>
-  <a href="https://neurons-me.github.io/mlearning.studio/datasets/madrid-gtfs/" class="active">Madrid GTFS dataset</a>
 </nav>
 
 # Madrid GTFS
