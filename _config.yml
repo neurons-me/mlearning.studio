@@ -1,0 +1,50 @@
+title: mlearning.studio
+description: Machine learning studio for the neurons.me stack.
+url: https://neurons-me.github.io
+baseurl: "/mlearning.studio"
+
+remote_theme: neurons-me/neurons-me
+
+plugins:
+  - jekyll-remote-theme
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
+  hard_wrap: false
+
+exclude:
+  - Typescript/node_modules
+  - Typescript/dist
+  - Typescript/src
+  - Python/__pycache__
+  - Python/src
+  - Python/tests
+  - Python/dist
+  - Python/build
+  - Rust/target
+  - Rust/src
+  - node_modules
+  - "*/node_modules"
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: readme
+
+me_theme:
+  brand: mlearning.studio
+  favicon: "https://res.cloudinary.com/dkwnxf6gm/image/upload/v1760629064/neurons.me_b50f6a.png"
+  nav:
+    - label: Home
+      url: https://neurons-me.github.io/
+    - label: Docs
+      relative_url: /
+    - label: Github
+      url: https://github.com/neurons-me/mlearning.studio
+    - label: All.This
+      url: https://neurons-me.github.io/all.this/
