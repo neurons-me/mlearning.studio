@@ -84,4 +84,46 @@ Prefer **CHANGE** archives (`GTFS-Scale-{1,10,100}-CHANGE.tar.xz`), not ALL. Ext
 
 ---
 
-← [Datasets](../) · [mlearning.studio](https://neurons-me.github.io/mlearning.studio)
+<style>
+  .page-crumbs,
+  .page-crumbs p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 0.9rem;
+    margin: 2rem 0 0;
+  }
+  .page-crumbs {
+    padding: 1rem 0 0.25rem;
+    border-top: 1px solid #d0d7de;
+    font-size: 0.92rem;
+  }
+  .page-crumbs p { margin: 0; }
+  .page-crumbs a {
+    display: inline-flex;
+    padding: 0.25rem 0.4rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+  }
+  .page-crumbs a:hover,
+  .page-crumbs a:focus-visible {
+    background: rgba(15, 106, 120, 0.1);
+  }
+  .page-crumbs .separator { color: #8c959f; }
+  @media (prefers-color-scheme: dark) {
+    .page-crumbs { border-top-color: #30363d; }
+    .page-crumbs .separator { color: #8b949e; }
+  }
+</style>
+
+<nav class="page-crumbs" aria-label="Breadcrumb">
+  <a href="https://this.me">.me</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <a href="https://neurons-me.github.io/.me/docs/Tests/">Tests</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <a href="https://github.com/neurons-me/.me/tree/main/Typescript/tests/Benchmarks/GTFS-Madrid">Benchmarks</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <a href="https://neurons-me.github.io/mlearning.studio/datasets/">Datasets</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <a href="https://neurons-me.github.io/mlearning.studio/datasets/madrid-gtfs/" aria-current="page">Madrid GTFS</a>
+</nav>
