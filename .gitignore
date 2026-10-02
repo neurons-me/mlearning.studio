@@ -33,3 +33,8 @@ Python/poetry.lock
 # ─── Rust ─────────────────────────────────────
 Rust/target/
 Rust/Cargo.lock
+
+# ─── Datasets (never commit bulk GTFS dumps) ───
+datasets/**/data/
+*.tar.xz
+GTFS-Scale-*-CHANGE.tar.xz

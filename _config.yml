@@ -44,6 +44,8 @@ me_theme:
       url: https://neurons-me.github.io/
     - label: Docs
       relative_url: /
+    - label: Datasets
+      relative_url: /datasets/
     - label: Github
       url: https://github.com/neurons-me/mlearning.studio
     - label: All.This

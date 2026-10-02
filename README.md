@@ -12,6 +12,17 @@ A multi-runtime package — pick a language and start from the matching folder:
 | 🐍 **Python** | [`Python/`](./Python/) | Under development |
 | 🦀 **Rust** | [`Rust/`](./Rust/) | Under development |
 
+
+## Datasets
+
+Curated entries (links + live demos — **not** bulk dumps):
+
+| Dataset | Path | Pages |
+| ------- | ---- | ----- |
+| **Madrid GTFS** | [`datasets/madrid-gtfs/`](./datasets/madrid-gtfs/) | [/datasets/madrid-gtfs/](https://neurons-me.github.io/mlearning.studio/datasets/madrid-gtfs/) |
+
+Collection index: [`datasets/`](./datasets/) · [https://neurons-me.github.io/mlearning.studio/datasets/](https://neurons-me.github.io/mlearning.studio/datasets/)
+
 ## Clone
 
 ```bash
