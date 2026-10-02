@@ -1,3 +1,33 @@
+<style>
+  .sc-topnav {
+    display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+    padding: 8px 32px; margin: 0 auto 1.5rem; max-width: 980px;
+    border-bottom: 1px solid #d0d7de; font-size: 0.82rem; font-weight: 600;
+    background: transparent; min-height: 40px; box-sizing: border-box;
+  }
+  .sc-topnav a {
+    text-decoration: none; color: #57606a; padding: 5px 10px; border-radius: 6px;
+    transition: background .15s, color .15s;
+  }
+  .sc-topnav a:hover { color: #24292f; background: rgba(15, 106, 120, 0.1); }
+  .sc-topnav a.active { color: #0f6a78; background: rgba(15, 106, 120, 0.14); }
+  @media (prefers-color-scheme: dark) {
+    .sc-topnav { border-bottom-color: #30363d; }
+    .sc-topnav a { color: #8b949e; }
+    .sc-topnav a:hover { color: #c9d1d9; background: rgba(79, 209, 197, 0.1); }
+    .sc-topnav a.active { color: #4fd1c5; background: rgba(79, 209, 197, 0.16); }
+  }
+  @media (max-width: 767px) { .sc-topnav { padding: 8px 16px; } }
+</style>
+<nav class="sc-topnav" aria-label="Smart Cities">
+  <a href="https://neurons-me.github.io/smart-cities/">Smart Cities</a>
+  <a href="https://neurons-me.github.io/.me/docs/Smart-Cities.html">Syntax</a>
+  <a href="https://neurons-me.github.io/.me/docs/Tests/gtfs-madrid-universe.html">GTFS</a>
+  <a href="https://neurons-me.github.io/.me/docs/Tests/madrid-knowledge.html">Fares</a>
+  <a href="https://neurons-me.github.io/mlearning.studio/datasets/">Datasets</a>
+  <a href="https://neurons-me.github.io/mlearning.studio/datasets/madrid-gtfs/" class="active">Madrid GTFS dataset</a>
+</nav>
+
 # Madrid GTFS
 
 > Transit GTFS shaped as a reactive semantic graph on [`.me`](https://neurons-me.github.io/.me/) — for Smart Cities demos and dependency‑propagation benchmarks. **No bulk dumps in this repo.**
