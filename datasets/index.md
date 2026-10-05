@@ -13,7 +13,7 @@ permalink: /datasets/
 | Dataset | Path | Focus |
 | ------- | ---- | ----- |
 | **Madrid GTFS** | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
-| **Hospital** | [`hospital/`](./hospital/) | Smart Cities infrastructure node; Raha/Baran hospital dirty/clean (link + sha256); benchmark path in `.me` |
+| **Hospital** | [`hospital/`](./hospital/) | Raha/Baran dirty/clean → `.me` DataQuality checks (link + sha256) |
 
 ## Principles
 
