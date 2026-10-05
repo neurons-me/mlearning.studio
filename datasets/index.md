@@ -13,12 +13,13 @@ permalink: /datasets/
 | Dataset | Path | Focus |
 | ------- | ---- | ----- |
 | **Madrid GTFS** | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
+| **Hospital** | [`hospital/`](./hospital/) | Smart Cities infrastructure node; Raha/Baran hospital dirty/clean (link + sha256); benchmark path in `.me` |
 
 ## Principles
 
 - **Link, don’t dump** — Zenodo / upstream packages stay the source of truth for scale‑1 / scale‑10 / scale‑100 CHANGE archives.
 - **Live demos first** — tiny synthetic subsets run in the browser on the published `.me` kernel.
-- **Benchmark path** — reproducible CREATE / UPDATE / DELETE propagation work lives under `.me`’s `Typescript/tests/Benchmarks/GTFS-Madrid/`.
+- **Benchmark path** — reproducible workloads live under `.me`’s `Typescript/tests/Benchmarks/` (e.g. GTFS‑Madrid; Hospital / DataQuality‑Hospital when published).
 
 ---
 
