@@ -20,6 +20,7 @@ Curated entries (links + live demos — **not** bulk dumps):
 | Dataset | Path | Pages |
 | ------- | ---- | ----- |
 | **Madrid GTFS** | [`datasets/madrid-gtfs/`](./datasets/madrid-gtfs/) | [/datasets/madrid-gtfs/](https://neurons-me.github.io/mlearning.studio/datasets/madrid-gtfs/) |
+| **Hospital** | [`datasets/hospital/`](./datasets/hospital/) | [/datasets/hospital/](https://neurons-me.github.io/mlearning.studio/datasets/hospital/) |
 
 Collection index: [`datasets/`](./datasets/) · [https://neurons-me.github.io/mlearning.studio/datasets/](https://neurons-me.github.io/mlearning.studio/datasets/)
 
