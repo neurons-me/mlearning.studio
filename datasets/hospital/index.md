@@ -2,7 +2,7 @@
 layout: readme
 title: Hospital
 description: Hospital dirty/clean (Raha/Baran) as a .me DataQuality node — provenance links, no dumps.
-image: https://suign.github.io/assets/imgs/SMARTCITY.jpg
+image: https://suign.github.io/assets/imgs/HOSPITAL.jpg
 permalink: /datasets/hospital/
 ---
 
