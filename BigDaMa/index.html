@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" data-accent="neutral">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>BigDaMa — Raha, Baran and benchmark datasets · mlearning.studio</title>
+  <meta name="description" content="Raha (error detection, SIGMOD 2019) and Baran (error correction, PVLDB 2020) from Ziawasch Abedjan's BigDaMa group, plus the dirty/clean benchmark datasets in BigDaMa/raha. mlearning.studio links to and pins them; it does not own them." />
+  <link rel="canonical" href="https://neurons-me.github.io/mlearning.studio/BigDaMa/" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dkwnxf6gm/image/upload/v1760629064/neurons.me_b50f6a.png" />
+  <meta property="og:title" content="BigDaMa — Raha, Baran and benchmark datasets" />
+  <meta property="og:description" content="Data-cleaning tools and dirty/clean benchmarks from Ziawasch Abedjan's BigDaMa group. Linked and pinned by mlearning.studio." />
+  <meta property="og:image" content="https://neurons-me.github.io/mlearning.studio/BigDaMa/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://neurons-me.github.io/mlearning.studio/BigDaMa/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BigDaMa — Raha, Baran and benchmark datasets" />
+  <meta name="twitter:description" content="Data-cleaning tools and dirty/clean benchmarks from Ziawasch Abedjan's BigDaMa group. Linked and pinned by mlearning.studio." />
+  <meta name="twitter:image" content="https://neurons-me.github.io/mlearning.studio/BigDaMa/og.jpg" />
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --blue: #83d6ec;
+      --red: #f19b9b;
+      --line: rgba(255,255,255,.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(131,214,236,.08), transparent 32rem),
+        radial-gradient(circle at 85% 20%, rgba(241,155,155,.08), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(760px, calc(100% - 40px)); margin: 0 auto; padding-top: 12px; }
+
+    /* Topbar: one me:// path line + Docs + GitHub mark (same as Smart Cities) */
+    .topnav { position: sticky; top: 0; z-index: 100; height: 48px; display: flex; align-items: center; gap: 12px; padding: 0 20px;
+      background: rgba(11,17,20,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(232,237,237,0.10); }
+    .topnav a { text-decoration: none; }
+    .topnav .logo { display: inline-flex; line-height: 0; }
+    .topnav .logo img { width: 28px; height: 28px; object-fit: contain; display: block; }
+    .mepath { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; line-height: 1.5; }
+    .mepath a { color: #4fd1c5; }
+    .mepath a:hover { text-decoration: underline; }
+    .mepath .sep { color: #98a7b3; opacity: .6; margin: 0 1px; }
+    .mepath .here { font-weight: 600; color: #e8eded; }
+    .topnav .spacer { flex: 1; }
+    .topnav .act { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; color: #98a7b3; }
+    .topnav .act:hover { color: #4fd1c5; text-decoration: underline; }
+    .topnav .gh { display: inline-flex; line-height: 0; color: #98a7b3; }
+    .topnav .gh:hover { color: #e8eded; }
+    @media (max-width: 420px) { .topnav { padding: 0 14px; gap: 10px; } }
+
+    header { padding: 28px 0 32px; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -.03em; margin: 0 0 14px; }
+    .lead { font-size: 1.1rem; color: #d4d4d8; max-width: 60ch; margin: 0; }
+    .note { font-size: .85rem; color: var(--muted); max-width: 64ch; margin: 12px 0 0; }
+    .note a { color: var(--blue); text-decoration: none; }
+    .note a:hover { text-decoration: underline; }
+    section { padding: 32px 0; border-top: 1px solid var(--line); }
+    .section-title { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.1; letter-spacing: -.02em; font-weight: 800; margin: 0 0 18px; }
+    .section-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 18px; }
+    .links { display: flex; flex-direction: column; gap: 10px; }
+    .item {
+      display: block; padding: 16px 20px; border: 1px solid var(--line); border-radius: 14px;
+      background: rgba(255,255,255,.03); text-decoration: none; transition: border-color .15s, background .15s;
+    }
+    .item:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.05); }
+    .item-title { font-weight: 600; font-size: 1.02rem; }
+    a.item-title { text-decoration: none; }
+    a.item-title:hover { text-decoration: underline; }
+    .item-desc { color: var(--muted); font-size: .9rem; margin-top: 4px; }
+    .item-meta { color: #d4d4d8; font-size: .82rem; margin-top: 10px; }
+    .item-tag {
+      display: inline-block; margin-top: 10px; font-size: .72rem; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--blue); opacity: .9;
+    }
+    .item-media {
+      display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+      border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--line);
+    }
+    .tool-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 640px) { .tool-grid { grid-template-columns: repeat(2, 1fr); } }
+    .tool-grid .item { display: flex; flex-direction: column; }
+    .tool-grid .pills { margin-top: auto; padding-top: 12px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .pills a { font-size: .82rem; text-decoration: none; color: var(--blue); padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.03); }
+    .pills a:hover { border-color: rgba(131,214,236,.5); background: rgba(131,214,236,.08); }
+    .ds-card { max-width: 420px; }
+    .plain { margin: 22px 0 0; }
+    .plain-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 8px; }
+    .plain ul { list-style: none; margin: 0; padding: 0; }
+    .plain li { display: grid; grid-template-columns: 6.5em 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+    .plain li:last-child { border-bottom: 0; }
+    .plain code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .88rem; color: var(--text); }
+    .plain .dim { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .fine { font-size: .8rem; color: var(--muted); margin: 12px 0 0; }
+    .fine a { color: var(--blue); text-decoration: none; }
+    .fine a:hover { text-decoration: underline; }
+    .rel { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .9rem; }
+    .rel a { color: var(--blue); text-decoration: none; }
+    .rel a:hover { text-decoration: underline; }
+    footer { padding: 30px 0 60px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 20px; }
+    footer p { margin: 0 0 8px; max-width: 64ch; }
+  </style>
+</head>
+<body>
+  <nav class="topnav" aria-label="me path">
+    <a class="logo" href="https://neurons-me.github.io/" title="neurons.me"><img src="https://res.cloudinary.com/dkwnxf6gm/image/upload/v1760629064/neurons.me_b50f6a.png" alt="neurons.me" width="28" height="28" /></a>
+    <div class="mepath"><a href="https://neurons-me.github.io/.me/" title=".me">me://</a><a href="https://neurons-me.github.io/mlearning.studio/" title="mlearning.studio">mlearning.studio</a><span class="sep">/</span><span class="here" aria-current="page">BigDaMa</span></div>
+    <span class="spacer"></span>
+    <a class="act" href="https://neurons-me.github.io/mlearning.studio/">Docs</a>
+    <a class="gh" href="https://github.com/neurons-me/mlearning.studio" target="_blank" rel="noopener" title="GitHub · neurons-me/mlearning.studio" aria-label="GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </nav>
+  <div class="wrap">
+    <header>
+      <h1>BigDaMa</h1>
+      <p class="lead">Data-cleaning tools from the Big Data Management group (BigDaMa) of Ziawasch Abedjan, TU Berlin, and the dirty/clean benchmarks published with them.</p>
+      <p class="note">TU Berlin now lists BigDaMa as a former group. Abedjan leads the <a href="https://www.tu.berlin/en/d2ip">Data Integration and Data Preparation group (D2IP)</a> at TU Berlin and BIFOLD.</p>
+    </header>
+
+    <section>
+      <h2 class="section-title">Tools</h2>
+      <div class="tool-grid">
+        <div class="item">
+          <a class="item-title" href="https://github.com/BigDaMa/raha">Raha</a>
+          <div class="item-desc">Error detection without configuration. Many base detectors flag candidate errors; it then learns from a few user-labelled tuples which candidates are real errors.</div>
+          <div class="item-meta">Mahdavi, Abedjan, Castro Fernandez, Madden, Ouzzani, Stonebraker, Tang · SIGMOD 2019</div>
+          <div class="pills">
+            <a href="https://doi.org/10.1145/3299869.3324956">Paper (DOI)</a>
+            <a href="https://github.com/BigDaMa/raha">Code</a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="item-title" href="https://github.com/BigDaMa/raha">Baran</a>
+          <div class="item-desc">Error correction. Combines several corrector models over one context representation of each value and generalizes from a few user fixes; can use transfer learning.</div>
+          <div class="item-meta">Mahdavi, Abedjan · PVLDB 13, 2020</div>
+          <div class="pills">
+            <a href="https://doi.org/10.14778/3407790.3407801">Paper (DOI)</a>
+            <a href="https://www.vldb.org/pvldb/vol13/p1948-mahdavi.pdf">PDF</a>
+            <a href="https://github.com/BigDaMa/raha">Code</a>
+          </div>
+        </div>
+      </div>
+      <p class="fine">Raha and Baran live in one repository, <a href="https://github.com/BigDaMa/raha">BigDaMa/raha</a> (Apache-2.0), installable as <code>pip install raha</code>. The older <a href="https://github.com/BigDaMa/baran">BigDaMa/baran</a> repository only points there.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Datasets</h2>
+      <div class="links">
+        <a class="item ds-card" href="https://neurons-me.github.io/mlearning.studio/datasets/hospital/">
+          <img class="item-media" src="https://suign.github.io/assets/imgs/HOSPITAL.jpg" width="1672" height="941" alt="Hospital dataset entry on mlearning.studio" />
+          <div class="item-title">Hospital</div>
+          <div class="item-desc">1,000 rows × 20 columns, 509 dirty cells. Dirty/clean pair pinned at commit <code>7be1334</code> with sha256 checksums.</div>
+          <span class="item-tag">Pinned on mlearning.studio</span>
+        </a>
+      </div>
+
+      <div class="plain">
+        <p class="plain-label">Also in BigDaMa/raha — not mirrored here</p>
+        <ul>
+          <li><code>beers</code><span class="dim">2,410 × 11 · 4,362 dirty cells</span></li>
+          <li><code>flights</code><span class="dim">2,376 × 7 · 4,920 dirty cells</span></li>
+          <li><code>movies_1</code><span class="dim">7,390 × 17 · 7,675 dirty cells</span></li>
+          <li><code>rayyan</code><span class="dim">1,000 × 11 · 948 dirty cells</span></li>
+          <li><code>tax</code><span class="dim">200,000 × 15 · 121,219 dirty cells</span></li>
+        </ul>
+        <p class="fine">Rows × columns and dirty cells (dirty ≠ clean) counted from <a href="https://github.com/BigDaMa/raha/tree/7be1334b8c7bbdac3f47ef514fb3e1e8c5fc181c/datasets">datasets/ at commit 7be1334</a> using Raha's own CSV loader. Get the files from the upstream repository.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Related</p>
+      <div class="rel">
+        <a href="https://github.com/BigDaMa">BigDaMa on GitHub</a>
+        <a href="https://doi.org/10.1145/3299869.3324956">Raha paper</a>
+        <a href="https://doi.org/10.14778/3407790.3407801">Baran paper</a>
+        <a href="https://d2ip-tub.github.io/zabedjan/">Ziawasch Abedjan</a>
+        <a href="https://neurons-me.github.io/mlearning.studio/datasets/">mlearning.studio datasets</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Raha, Baran and the benchmark files belong to their authors and are published in BigDaMa/raha. mlearning.studio is not part of BigDaMa; it only links to their work and pins dataset files by commit.</p>
+      <p>sui.gn / neurons.me</p>
+    </footer>
+  </div>
+</body>
+</html>

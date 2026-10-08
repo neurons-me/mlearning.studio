@@ -15,6 +15,8 @@ permalink: /datasets/
 | **Madrid GTFS** | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
 | **Hospital** | [`hospital/`](./hospital/) | Raha/Baran dirty/clean → `.me` DataQuality checks (link + sha256) |
 
+Hospital is pinned from BigDaMa/raha — see [BigDaMa](../BigDaMa/) for Raha/Baran and the other benchmarks in that repo.
+
 ## Principles
 
 - **Link, don’t dump** — Zenodo / upstream packages stay the source of truth for scale‑1 / scale‑10 / scale‑100 CHANGE archives.
