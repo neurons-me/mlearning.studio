@@ -12,7 +12,8 @@ permalink: /datasets/
 
 | Dataset | Path | Focus |
 | ------- | ---- | ----- |
-| **Madrid GTFS** | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
+| **GTFS** | [`GTFS/`](../GTFS/) | Public transit feeds |
+| &nbsp;&nbsp;↳ Madrid | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
 | **BigDaMa** | [`BigDaMa/`](../BigDaMa/) | Raha/Baran data-cleaning benchmarks (TU Berlin) |
 | &nbsp;&nbsp;↳ Hospital | [`hospital/`](./hospital/) | Dirty/clean pair → `.me` DataQuality checks (link + sha256) |
 

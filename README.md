@@ -26,6 +26,8 @@ Collection index: [`datasets/`](./datasets/) · [https://neurons-me.github.io/ml
 
 Upstream: [BigDaMa](./BigDaMa/) — Raha/Baran and the dirty/clean benchmarks in BigDaMa/raha (Hospital is pinned from there).
 
+Upstream: [GTFS](./GTFS/) — public transit feeds (Madrid GTFS is listed there).
+
 ## Clone
 
 ```bash

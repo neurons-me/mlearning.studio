@@ -22,7 +22,7 @@
 <nav class="sc-topnav" aria-label="Smart Cities">
   <a href="https://neurons-me.github.io/smart-cities/">Smart Cities</a>
   <a href="https://neurons-me.github.io/.me/docs/Smart-Cities.html">Syntax</a>
-  <a href="https://neurons-me.github.io/.me/docs/Tests/gtfs-madrid-universe.html">GTFS</a>
+  <a href="https://neurons-me.github.io/.me/Tests/gtfs-madrid-universe.html">GTFS</a>
   <a href="https://neurons-me.github.io/.me/docs/Tests/madrid-knowledge.html">Fares</a>
 </nav>
 
@@ -40,7 +40,7 @@ Madrid subway / regional GTFS is the shared shape used by:
 
 | Demo | URL |
 | ---- | --- |
-| GTFS Madrid universe | [gtfs-madrid-universe.html](https://neurons-me.github.io/.me/docs/Tests/gtfs-madrid-universe.html) |
+| GTFS Madrid universe | [gtfs-madrid-universe.html](https://neurons-me.github.io/.me/Tests/gtfs-madrid-universe.html) |
 | Madrid knowledge / fares | [madrid-knowledge.html](https://neurons-me.github.io/.me/docs/Tests/madrid-knowledge.html) |
 | Demo graph JSON (subset) | [gtfs-madrid-demo-graph.json](https://neurons-me.github.io/.me/docs/Tests/gtfs-madrid-demo-graph.json) |
 
