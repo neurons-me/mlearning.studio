@@ -13,9 +13,8 @@ permalink: /datasets/
 | Dataset | Path | Focus |
 | ------- | ---- | ----- |
 | **Madrid GTFS** | [`madrid-gtfs/`](./madrid-gtfs/) | Transit GTFS → reactive `.me` graph; Smart Cities demos + Zenodo / benchmark links |
-| **Hospital** | [`hospital/`](./hospital/) | Raha/Baran dirty/clean → `.me` DataQuality checks (link + sha256) |
-
-Hospital is pinned from BigDaMa/raha — see [BigDaMa](../BigDaMa/) for Raha/Baran and the other benchmarks in that repo.
+| **BigDaMa** | [`BigDaMa/`](../BigDaMa/) | Raha/Baran data-cleaning benchmarks (TU Berlin) |
+| &nbsp;&nbsp;↳ Hospital | [`hospital/`](./hospital/) | Dirty/clean pair → `.me` DataQuality checks (link + sha256) |
 
 ## Principles
 
